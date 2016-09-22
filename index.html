@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<meta charset="utf-8">
+	<title>Skeleton: Responsive CSS Boilerplate</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<base href="[(site_url)]">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="stylesheet" href="/template/css/normalize.css">
+	<link rel="stylesheet" href="/template/css/skeleton.css">	
+	<link rel="stylesheet" href="/template/css/megafish.css">
+	<link rel="stylesheet" href="/template/css/styles.css">
+	<link rel="stylesheet" href="/template/css/responsiveslides.css">	
+
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<script src="/template/js/jquery-3.1.0.min.js"></script>
+	<script src="/template/js/jquery-ui.min.js"></script>
+	<script src="/template/js/hoverIntent.js"></script>
+    <script src="/template/js/superfish.js"></script>
+	<script src="/template/js/responsiveslides.min.js"></script>
+	<script src="/template/js/stickUp.min.js"></script>
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<link rel="icon" type="image/png" href="#">
+	
+	<style>
+		.rslides {
+			position: relative;
+			list-style: none;
+			overflow: hidden;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+		}
+
+		.rslides li {
+		  -webkit-backface-visibility: hidden;
+		  position: absolute;
+		  display: none;
+		  width: 100%;
+		  left: 0;
+		  top: 0;
+		}
+
+		.rslides li:first-child {
+		  position: relative;
+		  display: block;
+		  float: left;
+		}
+
+		.rslides img {
+		  display: block;
+		  height: auto;
+		  float: left;
+		  width: 100%;
+		  border: 0;
+		}
+    </style>
+	
+	<script language="javascript" type="text/javascript">
+		$(document).ready(function () {
+			
+			var exampleOptions = {
+			  speed: 'fast'
+			}
+			// initialise plugin
+			var example = $('#example').superfish(exampleOptions);
+
+			// buttons to demonstrate Superfish's public methods
+			$('.destroy').on('click', function(){
+			  example.superfish('destroy');
+			});
+
+			$('.init').on('click', function(){
+			  example.superfish(exampleOptions);
+			});
+
+			$('.open').on('click', function(){
+			  example.children('li:first').superfish('show');
+			});
+
+			$('.close').on('click', function(){
+			  example.children('li:first').superfish('hide');
+			});
+			
+			$(".rslides").responsiveSlides({
+				auto: true,             // Boolean: Animate automatically, true or false
+				speed: 500,            // Integer: Speed of the transition, in milliseconds
+				timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+				pager: false,           // Boolean: Show pager, true or false
+				nav: true,             // Boolean: Show navigation, true or false
+				random: false,          // Boolean: Randomize the order of the slides, true or false
+				pause: false,           // Boolean: Pause on hover, true or false
+				pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+				prevText: "<",   // String: Text for the "previous" button
+				nextText: ">",       // String: Text for the "next" button
+				maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+				navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+				manualControls: "",     // Selector: Declare custom pager navigation
+				namespace: "rslides",   // String: Change the default namespace used
+				before: function(){},   // Function: Before callback
+				after: function(){}     // Function: After callback
+			});
+						
+		});
+	</script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="section menu-header">
+		<div class="container menu-header">
+			<div class="row">
+				<ul class="sf-menu" id="example">
+					<li class="current">
+					  <a href="followed.html">menu item 1</a>
+					  <div class="sf-mega">
+						<h2>Arbitrary stuff here. Here's a random unstyled table for example:</h2>
+						<div class="neat tabular"><table cellspacing="0"><thead><tr><th scope="col">Year level</th><th scope="col">Tuition fee per term</th><th scope="col">Composite fee per term</th><th scope="col">Total per term</th><th scope="col">Total annual charges</th></tr></thead><tbody><tr><td>ELC – 2 days</td><td>$1,700</td><td>$57</td><td>$1,757</td><td>$7,028</td></tr><tr><td>ELC – 3 days</td><td>$2,390</td><td>$79</td><td>$2,469</td><td>$9,876</td></tr><tr><td>ELC - 4 days</td><td>$3,095</td><td>$104</td><td>$3,199</td><td>$12,796</td></tr><tr><td>ELC/Pre-Prep</td><td>$3,865</td><td>$122</td><td>$3,987</td><td>$15,948</td></tr><tr><td>Prep</td><td>$3,300</td><td>$128</td><td>$3,428</td><td>$13,712</td></tr><tr><td>Year 1</td><td>$3,585</td><td>$128</td><td>$3,713</td><td>$14,852</td></tr><tr><td>Year 2</td><td>$3,950</td><td>$128</td><td>$4,078</td><td>$16,312</td></tr><tr><td>Year 3</td><td>$3,950</td><td>$275</td><td>$4,225</td><td>$16,900</td></tr><tr><td>Year 4</td><td>$4,420</td><td>$275</td><td>$4,695</td><td>$18,780</td></tr><tr><td>Year 5</td><td>$4,495</td><td>$309</td><td>$4,804</td><td>$19,216</td></tr><tr><td>Year 6</td><td>$4,495</td><td>$449</td><td>$4,944</td><td>$19,776</td></tr><tr><td>Year 7</td><td>$5,147</td><td>$393</td><td>$5,540</td><td>$22,160</td></tr><tr><td>Year 8</td><td>$5,147</td><td>$508</td><td>$5,655</td><td>$22,620</td></tr><tr><td>Year 9</td><td>$5,650</td><td>$552</td><td>$6,202</td><td>$24,808</td></tr></tbody></table></div>
+					  </div>
+					</li>
+					<li>
+					  <a href="followed.html">menu item 2</a>
+					</li>
+					<li>
+					  <a href="followed.html">menu item 3</a>
+					  <div class="sf-mega">
+						<div class="sf-mega-section">
+						  <h2>list heading:</h2>
+						  <ul>
+							<li class="current"><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+						  </ul>
+						</div>
+
+						<div class="sf-mega-section">
+						  <h2>list heading:</h2>
+						  <ul>
+							<li class="current"><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item that is longer</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+						  </ul>
+						</div>
+
+						<div class="sf-mega-section">
+						  <h2>list heading:</h2>
+						  <ul>
+							<li class="current"><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+						  </ul>
+						</div>
+
+						<div class="sf-mega-section">
+						  <h2>list heading:</h2>
+						  <ul>
+							<li class="current"><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+							<li><a href="followed.html">menu item</a></li>
+						  </ul>
+						</div>
+					  </div>
+					</li>
+					<li>
+					  <a href="followed.html">menu item 4</a>
+					</li> 
+				  </ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section slider">
+		<div class="container slider">
+			<div class="row">
+				<ul class="rslides">
+				  <li><img src="/template/images/slider/slide1.jpg" alt=""></li>
+				  <li><img src="/template/images/slider/slide2.jpg" alt=""></li>
+				  <li><img src="/template/images/slider/slide3.jpg" alt=""></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+  <div class="section data-content first-slide">
+    <div class="container">
+      <div class="row">
+        <div class="one-half column">
+          <h4 class="hero-heading">Stop coding non-responsive sites. Let users view sites from anywhere.</h4>
+          <a class="button button-primary" href="http://getskeleton.com">Try Skeleton</a>
+        </div>
+        <div class="one-half column phones">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section data-content second-slide">
+    <div class="container">
+      <div class="row">
+        <div class="one-third column value">
+          <h2 class="value-multiplier">67%</h2>
+          <h5 class="value-heading">Purchase Increase</h5>
+          <p class="value-description">Percentage of users more likely to purchase on mobile friendly site.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">90%</h2>
+          <h5 class="value-heading">Multi-device Users</h5>
+          <p class="value-description">Most of the world accesses the internet on multiple devices.</p>
+        </div>
+        <div class="one-third column value">
+          <h2 class="value-multiplier">66%</h2>
+          <h5 class="value-heading">Sad Users</h5>
+          <p class="value-description">Percentage of users that are frustrated with page load times.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section data-content third-slide">
+    <div class="container">
+      <h3 class="section-heading">Need help getting started?</h3>
+      <p class="section-description">Skeleton is an amazingly easy place to start with responsive development. If you want to learn more, just visit the documentation!</p>
+      <a class="button button-primary" href="http://getskeleton.com">View Skeleton Docs</a>
+    </div>
+  </div>
+
+  <div class="section data-content fourth-slide">
+    <div class="container">
+      <h3 class="section-heading">Responsive Images</h3>
+      <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
+      <div class="row">
+        <div class="one-half column category">
+        </div>
+        <div class="one-half column category">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section footer-slide">
+    <div class="container">
+      <h3 class="section-heading">Responsive Images</h3>
+      <p class="section-description">Skeleton images sit easily in grid with .u-max-full-width class. I suggest exploring solution to serving different images based on device size.</p>
+      <div class="row">
+        <div class="one-half column category">
+        </div>
+        <div class="one-half column category">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	
+<script type="text/javascript">
+	//initiating jQuery
+	jQuery(function($) {
+		$(document).ready( function() {
+			//enabling stickUp on the '.navbar-wrapper' class
+			$(".menu-header").stickUp();
+		});
+	});
+</script>
+</body>
+</html>
